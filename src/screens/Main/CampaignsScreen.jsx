@@ -5,6 +5,7 @@ import ScreenWrapper from '../../components/ScreenWrapper';
 import Card from '../../components/Card';
 import { COLORS, FONTS, SPACING, FONT_SIZES, RADII, SHADOWS } from '../../constants/theme';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { moderateScale } from '../../utils/responsive';
 
 const MOCK_CAMPAIGNS = [
   { id: '1', title: 'Clean Water Initiative', type: 'Awareness', reach: '15,000+', status: 'Ongoing', progress: 65 },
@@ -77,7 +78,7 @@ const CampaignsScreen = () => {
       </ScrollView>
 
       <TouchableOpacity
-        style={[styles.fab, { bottom: insets.bottom + SPACING.xxxl * 2 }]}
+        style={styles.fab}
         activeOpacity={0.85}
       >
         <Icon name="plus" size={26} color={COLORS.white} />
@@ -123,7 +124,7 @@ const styles = StyleSheet.create({
   typeBadge: {
     backgroundColor: COLORS.surfaceAlt,
     paddingHorizontal: SPACING.md,
-    paddingVertical: 5,
+    paddingVertical: moderateScale(5),
     borderRadius: RADII.pill,
     borderWidth: 1,
     borderColor: COLORS.border,
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
   },
   statusPill: {
     paddingHorizontal: SPACING.md,
-    paddingVertical: 5,
+    paddingVertical: moderateScale(5),
     borderRadius: RADII.pill,
   },
   statusText: {
@@ -156,20 +157,20 @@ const styles = StyleSheet.create({
   },
   progressBarBg: {
     flex: 1,
-    height: 8,
+    height: moderateScale(8),
     backgroundColor: COLORS.border,
-    borderRadius: 4,
+    borderRadius: moderateScale(4),
     overflow: 'hidden',
   },
   progressBarFill: {
-    height: 8,
-    borderRadius: 4,
+    height: moderateScale(8),
+    borderRadius: moderateScale(4),
   },
   progressText: {
     fontSize: FONT_SIZES.small,
     fontFamily: FONTS.bold,
     color: COLORS.text,
-    width: 38,
+    width: moderateScale(38),
     textAlign: 'right',
   },
   cardFooter: {
@@ -206,10 +207,11 @@ const styles = StyleSheet.create({
   },
   fab: {
     position: 'absolute',
+    bottom: moderateScale(130),
     right: SPACING.gutter,
-    width: 58,
-    height: 58,
-    borderRadius: 29,
+    width: moderateScale(58),
+    height: moderateScale(58),
+    borderRadius: moderateScale(29),
     backgroundColor: COLORS.secondary,
     justifyContent: 'center',
     alignItems: 'center',

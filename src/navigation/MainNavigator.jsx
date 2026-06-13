@@ -2,6 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { COLORS } from '../constants/theme';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { moderateScale } from '../utils/responsive';
 
 import DashboardScreen from '../screens/Main/DashboardScreen';
 import MembersScreen from '../screens/Main/MembersScreen';
@@ -12,6 +14,7 @@ import ProfileScreen from '../screens/Main/ProfileScreen';
 const Tab = createBottomTabNavigator();
 
 const MainNavigator = () => {
+  const insets = useSafeAreaInsets();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -21,19 +24,37 @@ const MainNavigator = () => {
         tabBarStyle: {
           backgroundColor: COLORS.white,
           borderTopWidth: 0,
-          elevation: 20,
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 10 },
-          shadowOpacity: 0.1,
-          shadowRadius: 20,
-          height: 95,
-          // paddingBottom: 8,
-          paddingTop: 8,
-          borderRadius: 32,
+          marginHorizontal: moderateScale(20),
+          // elevation: 
+          // shadowColor: '#000',
+          // shadowOffset: { width: 0, height: moderateScale(10) },
+          // shadowOpacity: 0.1,
+          // shadowRadius: moderateScale(20),
+          height: moderateScale(70),
+          paddingBottom: moderateScale(10),
+          paddingTop: moderateScale(8),
+          borderRadius: moderateScale(32),
           position: 'absolute',
-          bottom: 16,
-          left: 16,
-          right: 16,
+          bottom: insets.bottom + moderateScale(16),
+          left: moderateScale(16),
+          right: moderateScale(16),
+        },
+        tabBarItemStyle: {
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          // paddingVertical: 0,
+          // marginVertical: 0,
+        },
+        tabBarIconStyle: {
+          marginTop: 0,
+          marginBottom: moderateScale(2),
+        },
+        tabBarLabelStyle: {
+          fontSize: moderateScale(11),
+          fontWeight: '600',
+          marginTop: 0,
+          marginBottom: 0,
         },
       }}
     >

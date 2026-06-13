@@ -5,6 +5,7 @@ import ScreenWrapper from '../../components/ScreenWrapper';
 import Card from '../../components/Card';
 import { COLORS, FONTS, SPACING, FONT_SIZES, RADII, SHADOWS } from '../../constants/theme';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { moderateScale } from '../../utils/responsive';
 
 const MOCK_SURVEYS = [
   { id: '1', title: 'Development Work Feedback', date: '10 Jun 2026', status: 'Active', responses: 450, target: 1000 },
@@ -66,7 +67,7 @@ const SurveysScreen = () => {
       </ScrollView>
 
       <TouchableOpacity
-        style={[styles.fab, { bottom: insets.bottom + SPACING.xxxl * 2 }]}
+        style={styles.fab}
         activeOpacity={0.85}
       >
         <Icon name="plus" size={26} color={COLORS.white} />
@@ -114,16 +115,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.successTint,
     paddingHorizontal: SPACING.md,
-    paddingVertical: 5,
+    paddingVertical: moderateScale(5),
     borderRadius: RADII.pill,
   },
   statusBadgeClosed: {
     backgroundColor: COLORS.divider,
   },
   statusDot: {
-    width: 6,
-    height: 6,
-    borderRadius: 3,
+    width: moderateScale(6),
+    height: moderateScale(6),
+    borderRadius: moderateScale(3),
     backgroundColor: COLORS.success,
     marginRight: SPACING.xs,
   },
@@ -157,21 +158,21 @@ const styles = StyleSheet.create({
   },
   progressBarBg: {
     flex: 1,
-    height: 8,
+    height: moderateScale(8),
     backgroundColor: COLORS.border,
-    borderRadius: 4,
+    borderRadius: moderateScale(4),
     overflow: 'hidden',
   },
   progressBarFill: {
-    height: 8,
+    height: moderateScale(8),
     backgroundColor: COLORS.secondary,
-    borderRadius: 4,
+    borderRadius: moderateScale(4),
   },
   progressLabel: {
     fontSize: FONT_SIZES.small,
     fontFamily: FONTS.bold,
     color: COLORS.text,
-    width: 38,
+    width: moderateScale(38),
     textAlign: 'right',
   },
   footer: {
@@ -213,10 +214,11 @@ const styles = StyleSheet.create({
   },
   fab: {
     position: 'absolute',
+    bottom: moderateScale(130),
     right: SPACING.gutter,
-    width: 58,
-    height: 58,
-    borderRadius: 29,
+    width: moderateScale(58),
+    height: moderateScale(58),
+    borderRadius: moderateScale(29),
     backgroundColor: COLORS.secondary,
     justifyContent: 'center',
     alignItems: 'center',

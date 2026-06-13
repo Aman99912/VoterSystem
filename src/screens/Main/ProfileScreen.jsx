@@ -5,6 +5,7 @@ import ScreenWrapper from '../../components/ScreenWrapper';
 import Card from '../../components/Card';
 import { COLORS, FONTS, SPACING, FONT_SIZES, RADII } from '../../constants/theme';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { moderateScale } from '../../utils/responsive';
 
 const STATS = [
   { label: 'Members', value: '12.4k' },
@@ -108,18 +109,18 @@ const styles = StyleSheet.create({
   },
   blob: {
     position: 'absolute',
-    top: -50,
-    right: -40,
-    width: 160,
-    height: 160,
-    borderRadius: 80,
+    top: -moderateScale(50),
+    right: -moderateScale(40),
+    width: moderateScale(160),
+    height: moderateScale(160),
+    borderRadius: moderateScale(80),
     backgroundColor: COLORS.whiteAlpha10,
   },
   avatarLarge: {
-    width: 92,
-    height: 92,
-    borderRadius: 46,
-    borderWidth: 3,
+    width: moderateScale(92),
+    height: moderateScale(92),
+    borderRadius: moderateScale(46),
+    borderWidth: moderateScale(3),
     borderColor: COLORS.whiteAlpha20,
     marginBottom: SPACING.md,
   },
@@ -166,8 +167,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   statDivider: {
-    width: 1,
-    height: 32,
+    width: moderateScale(1),
+    height: moderateScale(32),
     backgroundColor: COLORS.divider,
   },
   statValue: {
@@ -202,8 +203,8 @@ const styles = StyleSheet.create({
     paddingVertical: SPACING.md,
   },
   iconBox: {
-    width: 40,
-    height: 40,
+    width: moderateScale(40),
+    height: moderateScale(40),
     borderRadius: RADII.md,
     justifyContent: 'center',
     alignItems: 'center',
