@@ -1,7 +1,7 @@
 import { moderateScale, verticalScale } from '../utils/responsive';
 
 /**
- * WeReach Design System
+ * DPJ Design System
  * --------------------------------------------------------------------------
  * A single source of truth for colors, typography, spacing, radii and
  * elevation. Screens should never hardcode raw hex values or magic numbers —
