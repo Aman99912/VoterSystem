@@ -1,4 +1,4 @@
-package com.wereach
+package com.voter.dpjapp
 
 import android.app.Application
 import com.facebook.react.PackageList

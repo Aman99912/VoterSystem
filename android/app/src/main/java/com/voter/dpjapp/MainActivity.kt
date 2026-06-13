@@ -1,4 +1,4 @@
-package com.wereach
+package com.voter.dpjapp
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
